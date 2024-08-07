@@ -40,7 +40,7 @@ Ansible is an open-source automation platform. It is very, very simple to set up
 	ansible --version
    ```
 
-4.	An AWS EC2 instance (on Control node : RHEL)
+4.	An AWS EC2 instance (on Managed node : RHEL)
 	```sh
    hostname rhel-managed-node
 	useradd ansadmin
