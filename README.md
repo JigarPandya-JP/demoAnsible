@@ -58,7 +58,7 @@ Ansible is an open-source automation platform. It is very, very simple to set up
 	#PasswordAuthentication no
 	PasswordAuthentication yes		>>SAVE
 
-   # #Follwing step is only for RHEL
+   Follwing step is only for RHEL
       vi /etc/ssh/sshd_config.d/50-cloud-init.conf
       PasswordAuthentication yes    >>SAVE
        
