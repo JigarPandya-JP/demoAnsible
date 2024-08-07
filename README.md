@@ -68,15 +68,16 @@ Ansible is an open-source automation platform. It is very, very simple to set up
 
 5. Add RHEL Managed node to control node
    ```sh
-      login to ansible server with ansadmin
+
+   login to ansible server with ansadmin
       
-      Add Private IP address of RHEL EC2 to following
+   Add Private IP address of RHEL EC2 to following
          nano /etc/ansible/hosts
 
-      Copy ssh id
+   Copy ssh id
          ssh-copy-id 172.31.35.135
 
-      Try to login
+   Try to login
          ssh  172.31.35.135
 
 
@@ -84,35 +85,36 @@ Ansible is an open-source automation platform. It is very, very simple to set up
 6. Run Adhoc Commands
    ```sh
       
-      Ping		:	ansible all -m ping
+   Ping		:	ansible all -m ping
       
-      Command	:	ansible all -m command -a "uptime" /  "date" / "who"
+   Command	:	ansible all -m command -a "uptime" /  "date" / "who"
       
-      Stat		:	ansible all -m stat -a "path=/etc/hosts"
+   Stat		:	ansible all -m stat -a "path=/etc/hosts"
       
-      Yum		:	 ansible all -m yum -a "name=git" –b
+   Yum		:	 ansible all -m yum -a "name=git" –b
       
-      User		:	ansible all -m user –a "name=scott" -b
+   User		:	ansible all -m user –a "name=scott" -b
       
-      Setup	   :	ansible all -m setup  
+   Setup	   :	ansible all -m setup  
       
 
    ```
 
 7. Invenotry Files
    ```sh
-      Host Files :
+   Host Files :
 
-      ansible all -m ping
-      ansible all -m ping -i hosts
-      cat /etc/ansible/ansible.cfg
+         ansible all -m ping
+         ansible all -m ping -i hosts
+         cat /etc/ansible/ansible.cfg
+            
+         Create Group like
          
-         Cérate Group like
-            [rehl]
-      172.31.35.135
-      [ubuntu]
-      172.31.35.136
-         ansible rehl -m ping -i hosts 
+         [rehl]
+         172.31.35.135
+         [ubuntu]
+         172.31.35.136
+            ansible rehl -m ping -i hosts 
       
 
    ```
