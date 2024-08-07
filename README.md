@@ -40,7 +40,7 @@ Ansible is an open-source automation platform. It is very, very simple to set up
 	ansible --version
    ```
 
-4.	create RHEL Server  on EC2 and repeat following task
+4.	An AWS EC2 instance (on Control node : RHEL)
 	```sh
 
    hostname rhel-managed-node
@@ -67,7 +67,7 @@ Ansible is an open-source automation platform. It is very, very simple to set up
    ```
 
 5. Add RHEL Managed node to control node
-      ```sh
+   ```sh
       login to ansible server with ansadmin
       
       Add Private IP address of RHEL EC2 to following
@@ -80,9 +80,9 @@ Ansible is an open-source automation platform. It is very, very simple to set up
          ssh  172.31.35.135
 
 
-      ```
+   ```
 6. Run Adhoc Commands
-      ```sh
+   ```sh
       
       Ping		:	ansible all -m ping
       
@@ -97,10 +97,10 @@ Ansible is an open-source automation platform. It is very, very simple to set up
       Setup	   :	ansible all -m setup  
       
 
-      ```
+   ```
 
 7. Invenotry Files
-      ```sh
+   ```sh
       Host Files :
 
       ansible all -m ping
@@ -115,10 +115,10 @@ Ansible is an open-source automation platform. It is very, very simple to set up
          ansible rehl -m ping -i hosts 
       
 
-      ```
+   ```
 
 8. Config File Demo
-      ```sh
+   ```sh
       Create ansible.config file under home and add following
          [privilege_escalation]
          become=False
@@ -126,7 +126,7 @@ Ansible is an open-source automation platform. It is very, very simple to set up
       ansible all -m yum -a "name=tree"
 
 
-      ```
+   ```
 
 9. Modules
    ```sh
@@ -136,7 +136,7 @@ Ansible is an open-source automation platform. It is very, very simple to set up
 
    ```
 
-9. Playbooks
+10. Playbooks
    ```sh
    HelloWorld.yml
 
