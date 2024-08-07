@@ -40,7 +40,7 @@ Ansible is an open-source automation platform. It is very, very simple to set up
 	ansible --version
    ```
 
- 4	create RHEL Server  on EC2 and repeat following task
+4.	create RHEL Server  on EC2 and repeat following task
 	   ```sh
 
       hostname rhel-managed-node
