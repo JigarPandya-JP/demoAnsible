@@ -32,8 +32,8 @@ Ansible is an open-source automation platform. It is very, very simple to set up
    ssh-keygen
    ```
    
-3.	Install ansible2
-	```sh
+3.Install ansible2
+   ```sh
 	amazon-linux-extras install ansible2
 	
 	python --version
