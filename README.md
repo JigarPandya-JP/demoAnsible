@@ -38,3 +38,18 @@ Ansible is an open-source automation platform. It is very, very simple to set up
 	
 	python --version
 	ansible --version
+
+ 4	create RHEL Server  on EC2 and repeat following task
+	   ```sh
+	   useradd ansadmin
+	   passwd ansadmin
+	   
+	   visudo
+	   
+	   ansadmin ALL=(ALL) NOPASSWD: ALL  >> escape + :wq
+	   
+	   nano /etc/ssh/sshd_config
+	   #PasswordAuthentication no
+	   PasswordAuthentication yes		>>SAVE
+	   
+	   service sshd reload
