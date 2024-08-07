@@ -38,6 +38,8 @@ Ansible is an open-source automation platform. It is very, very simple to set up
 	
 	python --version
 	ansible --version
+
+   Alternate way using this link (https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-and-upgrading-ansible-with-pip)
    ```
 
 4.	An AWS EC2 instance (on Managed node : RHEL)
