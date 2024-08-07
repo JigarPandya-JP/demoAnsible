@@ -38,17 +38,22 @@ Ansible is an open-source automation platform. It is very, very simple to set up
 	
 	python --version
 	ansible --version
+
+   Alternate way using this link
+   	(https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-and-upgrading-ansible-with-pip
+   	after installation run $ ansible-config init --disabled > ansible.cfg
+   	)
    ```
 
 4.	An AWS EC2 instance (on Managed node : RHEL)
 	```sh
-   hostname rhel-managed-node
+   	hostname rhel-managed-node
 	useradd ansadmin
 	passwd ansadmin
 	   
 	visudo
 	   
-   add following text at last line(shift + g), press escape, enter :wq
+  	 add following text at last line(shift + g), press escape, enter :wq
 
 	ansadmin ALL=(ALL) NOPASSWD: ALL  
 	   
@@ -56,9 +61,9 @@ Ansible is an open-source automation platform. It is very, very simple to set up
 	#PasswordAuthentication no
 	PasswordAuthentication yes		>>SAVE
 
-   foll0wing step is only for RHEL
-      vi /etc/ssh/sshd_config.d/50-cloud-init.conf
-      PasswordAuthentication yes    >>SAVE
+   	following step is only for RHEL
+      		vi /etc/ssh/sshd_config.d/50-cloud-init.conf
+     	 	PasswordAuthentication yes    >>SAVE
        
 	service sshd reload
 
@@ -73,10 +78,10 @@ Ansible is an open-source automation platform. It is very, very simple to set up
          nano /etc/ansible/hosts
 
    Copy ssh id
-         ssh-copy-id 172.31.35.135
+         ssh-copy-id [IP of your managed node :172.31.35.135]
 
    Try to login
-         ssh  172.31.35.135
+         ssh  [IP of your managed node :172.31.35.135]
 
 
    ```
