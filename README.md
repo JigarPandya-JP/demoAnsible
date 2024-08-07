@@ -78,10 +78,10 @@ Ansible is an open-source automation platform. It is very, very simple to set up
          nano /etc/ansible/hosts
 
    Copy ssh id
-         ssh-copy-id 172.31.35.135
+         ssh-copy-id [IP of your managed node :172.31.35.135]
 
    Try to login
-         ssh  172.31.35.135
+         ssh  [IP of your managed node :172.31.35.135]
 
 
    ```
