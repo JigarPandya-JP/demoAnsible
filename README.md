@@ -150,5 +150,6 @@ Ansible is an open-source automation platform. It is very, very simple to set up
       ansible.builtin.debug:
          msg: Hello world
 
+   ansible-playbook -i hosts HelloWorld.yml
    
    ```
