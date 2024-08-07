@@ -47,13 +47,13 @@ Ansible is an open-source automation platform. It is very, very simple to set up
 
 4.	An AWS EC2 instance (on Managed node : RHEL)
 	```sh
-   hostname rhel-managed-node
+   	hostname rhel-managed-node
 	useradd ansadmin
 	passwd ansadmin
 	   
 	visudo
 	   
-   add following text at last line(shift + g), press escape, enter :wq
+  	 add following text at last line(shift + g), press escape, enter :wq
 
 	ansadmin ALL=(ALL) NOPASSWD: ALL  
 	   
@@ -61,9 +61,9 @@ Ansible is an open-source automation platform. It is very, very simple to set up
 	#PasswordAuthentication no
 	PasswordAuthentication yes		>>SAVE
 
-   foll0wing step is only for RHEL
-      vi /etc/ssh/sshd_config.d/50-cloud-init.conf
-      PasswordAuthentication yes    >>SAVE
+   	following step is only for RHEL
+      		vi /etc/ssh/sshd_config.d/50-cloud-init.conf
+     	 	PasswordAuthentication yes    >>SAVE
        
 	service sshd reload
 
