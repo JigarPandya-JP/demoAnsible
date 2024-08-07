@@ -32,7 +32,7 @@ Ansible is an open-source automation platform. It is very, very simple to set up
    ssh-keygen
    ```
    
-3.Install ansible2
+3. Install ansible2
    ```sh
 	amazon-linux-extras install ansible2
 	
@@ -86,20 +86,38 @@ Ansible is an open-source automation platform. It is very, very simple to set up
       
       Ping		:	ansible all -m ping
       
-      Command	:	ansible all -m command -a "uptime“ /  “date” / “who”
+      Command	:	ansible all -m command -a "uptime" /  "date" / "who"
       
       Stat		:	ansible all -m stat -a "path=/etc/hosts"
       
       Yum		:	 ansible all -m yum -a "name=git" –b
       
-      User		:	ansible all -m user –a “name=scott” -b
+      User		:	ansible all -m user –a "name=scott" -b
       
       Setup	   :	ansible all -m setup  
       
 
       ```
 
-7. Config File Demo
+7. Invenotry Files
+      ```sh
+      Host Files :
+
+      ansible all -m ping
+      ansible all -m ping -i hosts
+      cat /etc/ansible/ansible.cfg
+         
+         Cérate Group like
+            [rehl]
+      172.31.35.135
+      [ubuntu]
+      172.31.35.136
+         ansible rehl -m ping -i hosts 
+      
+
+      ```
+
+8. Config File Demo
       ```sh
       Create ansible.config file under home and add following
          [privilege_escalation]
@@ -110,18 +128,27 @@ Ansible is an open-source automation platform. It is very, very simple to set up
 
       ```
 
-8. Modules
-      ```sh
+9. Modules
+   ```sh
 
       ansible-doc -l 
       ansible-doc -l | wc
 
-      ```
+   ```
 
 9. Playbooks
-      ```sh
+   ```sh
+   HelloWorld.yml
 
-      ansible-doc -l 
-      ansible-doc -l | wc
+   - name: My first play
+   hosts: all
+   tasks:
+      - name: Ping all
+      ansible.builtin.ping:
 
-      ```
+      - name: Print message
+      ansible.builtin.debug:
+         msg: Hello world
+
+   
+   ```
