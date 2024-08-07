@@ -41,30 +41,31 @@ Ansible is an open-source automation platform. It is very, very simple to set up
    ```
 
 4.	create RHEL Server  on EC2 and repeat following task
-	   ```sh
+	```sh
 
-      hostname rhel-managed-node
+   hostname rhel-managed-node
 
-	   useradd ansadmin
-	   passwd ansadmin
+	useradd ansadmin
+	passwd ansadmin
 	   
-	   visudo
+	visudo
 	   
-      #add following text at last line(shift + g), press escape, enter :wq
+   #add following text at last line(shift + g), press escape, enter :wq
 
-	   ansadmin ALL=(ALL) NOPASSWD: ALL  
+	ansadmin ALL=(ALL) NOPASSWD: ALL  
 	   
-	   vi /etc/ssh/sshd_config
-	   #PasswordAuthentication no
-	   PasswordAuthentication yes		>>SAVE
+	vi /etc/ssh/sshd_config
+	#PasswordAuthentication no
+	PasswordAuthentication yes		>>SAVE
 
+   # #Follwing step is only for RHEL
       vi /etc/ssh/sshd_config.d/50-cloud-init.conf
       PasswordAuthentication yes    >>SAVE
        
-	   service sshd reload
+	service sshd reload
 
+   ```
 
-      ```
 5. Add RHEL Managed node to control node
       ```sh
       login to ansible server with ansadmin
